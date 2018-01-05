@@ -1,0 +1,17 @@
+<p>
+  carousel-list works!
+</p>
+
+<file-uploader [maxSizeInKb]="5120000" [allowMultiple]="False" [fileType]="'application/*'"
+               (onSelection)="fileuploaderFileChange($event)"  [required]="false"></file-uploader>
+
+
+<ng4-files-drop (filesSelect)="filesSelect($event)">
+  <div style="display: inline-block; height: 100px; width: 100px; background-color: gray">
+    {{selectedFiles}}
+  </div>
+</ng4-files-drop>
+
+<ng4-files-click (filesSelect)="filesSelect($event)">
+  <span>Click me to upload</span>
+</ng4-files-click>

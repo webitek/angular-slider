@@ -1,0 +1,13 @@
+html, body{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+a.active {
+  background-color: gray;
+  transition: box-shadow .25s;
+  /*display: flex;*/
+}
+.ui.secondary.inverted.pointing.menu .item {
+  text-transform: uppercase;
+}

@@ -1,0 +1,31 @@
+<ngx-carousel
+        [inputs]="carouselOne"
+        (carouselLoad)="myfunc($event)">
+  <ngx-item NgxCarouselItem *ngFor="let item of carouselOneItems">
+    <div class="slide-wrap"
+         [style.background-image]="'url(assets/img/' + item + ')'"
+         style="background-repeat: no-repeat;
+         background-size: cover" >
+      <span>{{item}}</span>
+    </div>
+  </ngx-item>
+  <button NgxCarouselPrev class='leftRs'>&lt;</button>
+  <button NgxCarouselNext class='rightRs'>&gt;</button>
+</ngx-carousel>
+<!--
+<ngx-carousel
+        [inputs]="carouselTile"
+  <ngx-item NgxCarouselItem *ngFor="let item of carouselTileItems">
+    <h1>{{}}</h1>
+  </ngx-item>
+
+  <ngx-item NgxCarouselItem *ngFor="let Tile of carouselTileItems">
+    &lt;!&ndash;<h1>{{Tile + 1}}</h1>&ndash;&gt;
+    <div class="slide-wrap" style="background: url('assets/img/car1.jpg') no-repeat; background-size: cover">
+      <span>{{Tile + 1}}</span>
+    </div>
+  </ngx-item>
+
+  <button NgxCarouselPrev class='leftRs'>&lt;</button>
+  <button NgxCarouselNext class='rightRs'>&gt;</button>
+</ngx-carousel>-->
