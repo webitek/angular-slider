@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {Http, HttpModule} from '@angular/http';
 import { NgModule, ApplicationRef } from '@angular/core';
+import { FileDropDirective, FileUploadModule} from 'ng2-file-upload';
 import {
   removeNgStyles,
   createNewHosts,
@@ -32,8 +33,9 @@ import { CarouselComponent } from "./carousel/carousel.component";
 import { NgxCarouselModule } from "ngx-carousel";
 import 'hammerjs';
 import {CarouselListComponent} from "./carousel-list/carousel-list.component";
-import { Ng4FilesModule } from 'angular4-files-upload';
-import { FileUploaderModule } from "ng4-file-upload/file-uploader.module";
+// import { Ng4FilesModule } from 'angular4-files-upload';
+// import { FileUploaderModule } from "ng4-file-upload/file-uploader.module";
+import {CarouselService} from "./carousel-list/carousel.service";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -56,7 +58,7 @@ type StoreType = {
     AppComponent,
     NoContentComponent,
     CarouselComponent,
-    CarouselListComponent
+    CarouselListComponent,
   ],
   /**
    * Import Angular's modules.
@@ -65,14 +67,15 @@ type StoreType = {
     BrowserModule,
     BrowserAnimationsModule,
     // FormsModule,
-    // HttpModule,
+    HttpModule,
     AuthModule,
     HttpClientModule,
     ReactiveFormsModule,
     PipesModule,
     NgxCarouselModule,
-    FileUploaderModule,
-    Ng4FilesModule,
+    // FileUploaderModule,
+    // Ng4FilesModule,
+    FileUploadModule,
     // AuthModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
@@ -85,6 +88,8 @@ type StoreType = {
   providers: [
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    CarouselService,
+    Http
   ],
   exports: [
     // LocalizedCurrencyPipe

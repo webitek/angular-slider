@@ -105,7 +105,7 @@ export class CarouselComponent implements OnInit {
   }
 
   public myfunc(event: Event) {
-    console.log(event);
+    // console.log(event);
   }
   public carouselTileLoad(evt: any) {
 
